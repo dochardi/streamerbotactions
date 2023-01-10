@@ -1,0 +1,15 @@
+using System;
+using System.Runtime.InteropServices;
+public class CPHInline
+{
+   [DllImport("user32.dll")]
+    public static extern Int32 SwapMouseButton(Int32 bSwap);
+	public bool Execute()
+	{ 
+        SwapMouseButton(1);
+        System.Threading.Thread.Sleep(6000);
+        SwapMouseButton(0);
+		// your main code goes here
+		return true;
+	}
+}
